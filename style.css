@@ -107,7 +107,7 @@ nav a:hover {
     cursor: pointer;
 }
   
-.submit-expense {
+.submit-btn {
     background-color: #4CAF50;
     margin: 8px 0;
 }
@@ -118,7 +118,7 @@ nav a:hover {
     margin-top: 30px;
 }
 
-#expense-form .submit-expense:hover {
+#expense-form .submit-btn:hover {
     background-color: #28a745;
 }
 
@@ -186,4 +186,11 @@ tr:hover {
     margin: 0 auto;
 }
 
+.red-trash  {
+    color: red;
+    font-size: 22px;
+}
 
+.strike {
+    text-decoration: line-through;
+}
