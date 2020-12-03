@@ -45,7 +45,7 @@ function generateExpense   {
 
     // tr.textContent = 
     //     <td></td>
-    //     <td></td>
+   
 
     // submit-btn.addEventListener('click', function(e) {
     //     row.appendChild
@@ -80,7 +80,7 @@ function generateExpense   {
 
 // STEP 6: Add currencies you use in XE app.
 
-// STEP 7: Add categories [work, personal, household, leisure, invested, other].
+// STEP 7: Add categories [business, personal, household, leisure, invested, other].
 
 // STEP 8: Add the type of change used [cash, credit].
 
