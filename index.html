@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -7,32 +8,30 @@
         <link href='style.css' rel='stylesheet'>
     </head>
     <body>
-        <div id="grid-container">
-            <!-- Navbar -->
-            <nav id="navbar-container">
-              <h1 class="logo">Expense Tracker</h1>
-            </nav>
-            work, personal, household, leisure, invested, other
+        <div id='grid-container'>
 
-            <!-- Create Container Form -->
-            <section id="create-container">
-              <form class="expense-form">
-                <label for="date">Date:</label>
-                <input type="date" id="date" required>
-                <label for="category">Category</label>
-                <select id="category" name="category" required>
-                  <option value="Work">Work</option>
-                  <option value="Personal">Personal</option>
-                  <option value="Household">Household</option>
-                  <option value="Leisure">Leisure</option>
+            <!-- Navbar -->
+            <nav id='navbar-container'>
+              <h1 class='title'>Expense Tracker</h1>
+            </nav>
+
+            <!-- Input Container -->
+            <section id='input-container'>
+              <form class='expense-form'>
+                <label for='date'>Date</label>
+                <input type='date' id='date' required>
+                <label for='category'>Category</label>
+                <select id='category' name='category' required>
+                  <option value='Work'>Work</option>
+                  <option value='Personal'>Personal</option>
+                  <option value='Household'>Household</option>
+                  <option value='Leisure'>Leisure</option>
                   <option calue='Invested'>Invested</option>
-                  <option value="Other">Other</option>
+                  <option value='Other'>Other</option>
                 </select>
-                <label name="description">Description </label>
-                <textarea placeholder="Enter expense" rows="6" cols="50" id="expense"
+                <label name='description'>Expense</label>
+                <textarea rows='3' cols='50' id='expense'
                   required></textarea>
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" required>
                 <label for="currency">Currency</label>
                 <select id="currency" name="currency" required>
                   <option value="EUR">Euro</option>
@@ -41,13 +40,14 @@
                   <option value="USD">US Dollar</option>
                   <option value="other">Other</option>
                 </select>
-        
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" required>
                 <input type="submit" value="Submit" class="btn submit-expense">
                 <input type="button" id="delete-all" value="Delete All" class="btn delete-all">
               </form>
             </section>
-        
-            <!-- The Expense Report -->
+
+            <!-- Expense Report -->
             <main id="expense-container">
               <table>
                 <thead>
@@ -56,15 +56,15 @@
                     <th>Date</th>
                     <th>Category</th>
                     <th>Description</th>
-                    <th>Amount</th>
                     <th>Currency</th>
+                    <th>Amount</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody id="expense-list"></tbody>
               </table>
             </main>
-        
+    
             <!-- Footer -->
             <footer id="footer">
               <p>&copy; 2020 Alejandra M. Ruiz</p>

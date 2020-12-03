@@ -10,8 +10,10 @@
 // PROJECT PLAN:
 
 // STEP 0: Create 4 input fields: date, expense, amount, entity. 
+// DONE
 
 // STEP 1: Get these inputs displaying in an HTML table.
+// in progress...
 
 // STEP 2: Ensure user can add new expenses, as in your todo app.
 
