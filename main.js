@@ -68,28 +68,22 @@ class expenseDisplay  {
                 currencySymbol = 'fas fa-dollar-sign';
                 break;
             case 'peso':
-                currencySymbol = 'fas fa-peso-sign';
+                currencySymbol = 'fas fa-dollar-sign';
                 break;
             case 'pound':
                 currencySymbol = 'fas fa-pound-sign';
                 break;
             case 'euro':
-                currencySymbol = 'fas fa-dollar-sign';
-                break;
-            case 'rand':
-                currencySymbol = 'fas fa-dollar-sign';
+                currencySymbol = 'fas fa-euro-sign';
                 break;
             case 'canadianDollar':
                 currencySymbol = 'fas fa-dollar-sign';
                 break;
-            case 'lira':
-                currencySymbol = 'fas fa-dollar-sign';
+            case 'japaneseYen':
+                currencySymbol = 'fas fa-yen-sign';
                 break;
-            case 'real':
-                currencySymbol = 'fas fa-dollar-sign';
-                break;
-            case 'kuwaitiDinar':
-                currencySymbol = 'fas fa-dollar-sign';
+            case 'indianRupee':
+                currencySymbol = 'fas fa-rupee-sign';
                 break;
             default:
                 currencySymbol = 'question';
@@ -105,10 +99,27 @@ class expenseDisplay  {
 document.querySelector('form').addEventListener('submit', function(e)   {
     const usersExpense = new expense(date.value, category.value, expense.value, currency.value, amount.value)
 
-    const expenseDisplay = new expenseDisplay();
-    expenseDisplay.setDateForToday();
+    // textContent?
 
 })
+
+
+
+
+// use below to render the table once you've generated it
+
+// let table = document.createElement("table");
+
+//     for (let i = 0; i < 10; i++) {
+//         let tr = document.createElement('tr');
+//         let td = document.createElement('td');
+//         tr.appendChild(td);
+//         table.appendChild(tr);
+//     }
+//     target.appendChild(table);
+
+
+
 
 
 
