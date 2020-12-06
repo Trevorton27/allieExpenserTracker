@@ -4,7 +4,7 @@ const category = document.getElementById('category');
 const expense = document.getElementById('expense');
 const currency = document.getElementById('currency');
 const amount = document.getElementById('amount');
-const expenseTable = document.getElementById('expense-list');
+const expenseTable = document.getElementById('table-body');
 
 
 class expense   {
@@ -19,8 +19,13 @@ class expense   {
 }
 
 
-function generateExpense   {
+function displayExpense(expense, tr)   {
 
+    const tr = document.createElement('tr');
+    expenseTable.appendChild(tr);
+
+    const currencySymbol = assignCurrency(expense);
+    
     const date = document.createElement('td');
     date.textContent = expense.date;
     
@@ -31,74 +36,55 @@ function generateExpense   {
     expense.textContent = expense.expense;
 
     const currency = document.createElement('td');
-    expense.textContent = expense.currency;
+    expense.textContent = currencySymbol;
 
     const amount = document.createElement('td');
     expense.textContent = expense.amount;
 
-    const expenseTable = document.createElement('td');
-    
-
-    // tr.textContent = 
-    //     <td></td>
-   
-
-    // submit-btn.addEventListener('click', function(e) {
-    //     row.appendChild
-    // });
-    
 }
 
 
-class expenseDisplay  {
+function assignCurrency(expense) {
 
-    renderExpense(expense)  {
-        const tr = document.createElement('tr');
-        const currencySymbol = this.verifyCurrency(expense);
-        generateExpense(expense, currencySymbol, tr);
-        tr.id = expense.id;
-        expenseTable.appendChild(tr);
-    }
+    let currencySymbol = expense.currency;
 
-    verifyCurrency(expense) {
-        let currencySymbol = expense.currency;
-
-        switch(currencySymbol)  {
-            case 'usDollar':
-                currencySymbol = 'fas fa-dollar-sign';
-                break;
-            case 'peso':
-                currencySymbol = 'fas fa-dollar-sign';
-                break;
-            case 'pound':
-                currencySymbol = 'fas fa-pound-sign';
-                break;
-            case 'euro':
-                currencySymbol = 'fas fa-euro-sign';
-                break;
-            case 'canadianDollar':
-                currencySymbol = 'fas fa-dollar-sign';
-                break;
-            case 'japaneseYen':
-                currencySymbol = 'fas fa-yen-sign';
-                break;
-            case 'indianRupee':
-                currencySymbol = 'fas fa-rupee-sign';
-                break;
-            default:
-                currencySymbol = 'question';
-                break;
-        
-        return currencySymbol;
-        
-        }
+    switch(currencySymbol)  {
+        case 'usDollar':
+            currencySymbol = 'fas fa-dollar-sign';
+            break;
+        case 'peso':
+            currencySymbol = 'fas fa-dollar-sign';
+            break;
+        case 'pound':
+            currencySymbol = 'fas fa-pound-sign';
+            break;
+        case 'euro':
+            currencySymbol = 'fas fa-euro-sign';
+            break;
+        case 'canadianDollar':
+            currencySymbol = 'fas fa-dollar-sign';
+            break;
+        case 'japaneseYen':
+            currencySymbol = 'fas fa-yen-sign';
+            break;
+        case 'indianRupee':
+            currencySymbol = 'fas fa-rupee-sign';
+            break;
+        default:
+            currencySymbol = 'question';
+            break;
+    
+    return currencySymbol;
+    
     }
 }
+
 
 // submit an expense
 document.querySelector('form').addEventListener('submit', function(e)   {
     const usersExpense = new expense(date.value, category.value, expense.value, currency.value, amount.value)
 
+    displayExpense(usersExpense);
     // textContent?
 
 })
