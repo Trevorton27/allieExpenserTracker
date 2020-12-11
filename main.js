@@ -7,16 +7,16 @@ const amount = document.getElementById('amount');
 const expenseTable = document.getElementById('table-body');
 
 
-class expense   {
-    constructor(date, category, expense, currency, amount, id)  {
-        this.date = date;
-        this.category = category;
-        this.expense = expense;
-        this.currency = currency;
-        this.amount = amount;
-        this.id = id;
-    }
-}
+// class expense   {
+//     constructor(date, category, expense, currency, amount, id)  {
+//         this.date = date;
+//         this.category = category;
+//         this.expense = expense;
+//         this.currency = currency;
+//         this.amount = amount;
+//         this.id = id;
+//     }
+// }
 
 
 function displayExpense(expense, tr)   {
