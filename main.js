@@ -7,39 +7,29 @@ const amount = document.getElementById('amount');
 const expenseTable = document.getElementById('table-body');
 
 
-// class expense   {
-//     constructor(date, category, expense, currency, amount, id)  {
-//         this.date = date;
-//         this.category = category;
-//         this.expense = expense;
-//         this.currency = currency;
-//         this.amount = amount;
-//         this.id = id;
-//     }
-// }
+function displayExpense(expense)   {
 
+    console.log('Display expense: ', expense);
 
-function displayExpense(expense, tr)   {
+    // const tr = document.createElement('tr');
+    // expenseTable.appendChild(tr);
 
-    const tr = document.createElement('tr');
-    expenseTable.appendChild(tr);
-
-    const currencySymbol = assignCurrency(expense);
+    // const currencySymbol = assignCurrency(expense);
     
-    const date = document.createElement('td');
-    date.textContent = expense.date;
+    // const date = document.createElement('td');
+    // date.textContent = expense.date;
     
-    const category = document.createElement('td');
-    category.textContent = expense.category;
+    // const category = document.createElement('td');
+    // category.textContent = expense.category;
 
-    const expense = document.createElement('td');
-    expense.textContent = expense.expense;
+    // const expense = document.createElement('td');
+    // expense.textContent = expense.expense;
 
-    const currency = document.createElement('td');
-    expense.textContent = currencySymbol;
+    // const currency = document.createElement('td');
+    // expense.textContent = currencySymbol;
 
-    const amount = document.createElement('td');
-    expense.textContent = expense.amount;
+    // const amount = document.createElement('td');
+    // expense.textContent = expense.amount;
 
 }
 
@@ -82,10 +72,24 @@ function assignCurrency(expense) {
 
 // submit an expense
 document.querySelector('form').addEventListener('submit', function(e)   {
-    const usersExpense = new expense(date.value, category.value, expense.value, currency.value, amount.value)
+    e.preventDefault();
+
+    const date = document.getElementById('date');
+    const category = document.getElementById('category');
+    const expense = document.getElementById('expense');
+    const currency = document.getElementById('currency');
+    const amount = document.getElementById('amount');
+    const expenseTable = document.getElementById('table-body');
+
+    const usersExpense = {
+        date: date.value, 
+        category: category.value, 
+        expense: expense.value, 
+        currency: currency.value, 
+        amount: amount.value
+    }
 
     displayExpense(usersExpense);
-    // textContent?
 
 })
 
