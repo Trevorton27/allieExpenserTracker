@@ -9,10 +9,10 @@ const expenseTable = document.getElementById('table-body');
 
 function displayExpense(expense)   {
 
-    console.log('Display expense: ', expense);
+    // console.log('Display expense: ', expense);
 
-    // const tr = document.createElement('tr');
-    // expenseTable.appendChild(tr);
+    const tr = document.createElement('tr');
+    expenseTable.appendChild(tr);
 
     // const currencySymbol = assignCurrency(expense);
     
@@ -22,8 +22,8 @@ function displayExpense(expense)   {
     // const category = document.createElement('td');
     // category.textContent = expense.category;
 
-    // const expense = document.createElement('td');
-    // expense.textContent = expense.expense;
+    const expenseCell = document.createElement('td');
+    expenseCell.textContent = expense;
 
     // const currency = document.createElement('td');
     // expense.textContent = currencySymbol;
