@@ -8,41 +8,23 @@ const expenseTable = document.getElementById('table-body');
 
 
 function displayExpense(expense)   {
-    console.log('Display expense: ', expense);
-
-    // GET <tbody>
     const table = document.getElementById('table-body');
-    // CREATE <tr> & <td>
     const tableRow = document.createElement('tr');
     const dateTableData = document.createElement('td');
-    // ADD INFO to <td>
+
     dateTableData.textContent = expense.date;
-    // APPEND <td> to <tr>
     tableRow.append(dateTableData);
-    // APPEND <tr> to <tbody>
     table.append(tableRow);
+
+    // GET <tbody>
+    // CREATE <tr> & <td>    
+    // ADD INFO to <td>
+    // APPEND <td> to <tr>
+    // APPEND <tr> to <tbody>
+
+    const categoryTableData = document.createElement('td');
     
-    
-
-    // const tr = document.createElement('tr');
-    // expenseTable.appendChild(tr);
-
-    // const currencySymbol = assignCurrency(expense);
-    
-    // const date = document.createElement('td');
-    // date.textContent = expense.date;
-    
-    // const category = document.createElement('td');
-    // category.textContent = expense.category;
-
-    // const expenseCell = document.createElement('td');
-    // expenseCell.textContent = expense;
-
-    // const currency = document.createElement('td');
-    // expense.textContent = currencySymbol;
-
-    // const amount = document.createElement('td');
-    // expense.textContent = expense.amount;
+    categoryTableData.textContent = category
 
 }
 
@@ -107,18 +89,6 @@ document.querySelector('form').addEventListener('submit', function(e)   {
 
 
 
-
-// use below to render the table once you've generated it
-
-// let table = document.createElement("table");
-
-//     for (let i = 0; i < 10; i++) {
-//         let tr = document.createElement('tr');
-//         let td = document.createElement('td');
-//         tr.appendChild(td);
-//         table.appendChild(tr);
-//     }
-//     target.appendChild(table);
 
 
 
