@@ -8,11 +8,24 @@ const expenseTable = document.getElementById('table-body');
 
 
 function displayExpense(expense)   {
+    console.log('Display expense: ', expense);
 
-    // console.log('Display expense: ', expense);
+    // GET <tbody>
+    const table = document.getElementById('table-body');
+    // CREATE <tr> & <td>
+    const tableRow = document.createElement('tr');
+    const dateTableData = document.createElement('td');
+    // ADD INFO to <td>
+    dateTableData.textContent = expense.date;
+    // APPEND <td> to <tr>
+    tableRow.append(dateTableData);
+    // APPEND <tr> to <tbody>
+    table.append(tableRow);
+    
+    
 
-    const tr = document.createElement('tr');
-    expenseTable.appendChild(tr);
+    // const tr = document.createElement('tr');
+    // expenseTable.appendChild(tr);
 
     // const currencySymbol = assignCurrency(expense);
     
@@ -22,8 +35,8 @@ function displayExpense(expense)   {
     // const category = document.createElement('td');
     // category.textContent = expense.category;
 
-    const expenseCell = document.createElement('td');
-    expenseCell.textContent = expense;
+    // const expenseCell = document.createElement('td');
+    // expenseCell.textContent = expense;
 
     // const currency = document.createElement('td');
     // expense.textContent = currencySymbol;
@@ -79,7 +92,6 @@ document.querySelector('form').addEventListener('submit', function(e)   {
     const expense = document.getElementById('expense');
     const currency = document.getElementById('currency');
     const amount = document.getElementById('amount');
-    const expenseTable = document.getElementById('table-body');
 
     const usersExpense = {
         date: date.value, 
