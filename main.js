@@ -10,10 +10,30 @@ const expenseTable = document.getElementById('table-body');
 function displayExpense(expense)   {
     const table = document.getElementById('table-body');
     const tableRow = document.createElement('tr');
+    // display date
     const dateTableData = document.createElement('td');
-
     dateTableData.textContent = expense.date;
     tableRow.append(dateTableData);
+    table.append(tableRow);
+// display category
+    const categoryTableData = document.createElement('td');
+    categoryTableData.textContent = expense.category;
+    tableRow.append(categoryTableData);
+    table.append(tableRow);
+// display expense proper
+    const expenseTableData = document.createElement('td');
+    expenseTableData.textContent = expense.expense;
+    tableRow.append(expenseTableData);
+    table.append(tableRow);
+// display currency
+    const currencyTableData = document.createElement('td');
+    currencyTableData.textContent = expense.currency;
+    tableRow.append(currencyTableData);
+    table.append(tableRow);
+// display amount
+    const amountTableData = document.createElement('td');
+    amountTableData.textContent = expense.amount;
+    tableRow.append(amountTableData);
     table.append(tableRow);
 
     // GET <tbody>
@@ -21,10 +41,6 @@ function displayExpense(expense)   {
     // ADD INFO to <td>
     // APPEND <td> to <tr>
     // APPEND <tr> to <tbody>
-
-    const categoryTableData = document.createElement('td');
-    
-    categoryTableData.textContent = category
 
 }
 
