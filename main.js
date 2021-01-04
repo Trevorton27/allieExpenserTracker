@@ -35,7 +35,14 @@ function displayExpense(expense)   {
     amountTableData.textContent = expense.amount;
     tableRow.append(amountTableData);
     table.append(tableRow);
-
+// display delete button
+    const deleteExpenseBtn = document.createElement("button");
+    deleteExpenseBtn.className = "deleteExpenseBtn";
+    deleteExpenseBtn.appendChild(document.createTextNode("x"));
+    amountTableData.appendChild(deleteExpenseBtn);
+// why do we have to add below 2? what do they do exactly?
+    tableRow.append(amountTableData);
+    table.append(tableRow);   
 
     // GET <tbody>
     // CREATE <tr> & <td>    
@@ -70,17 +77,15 @@ document.querySelector('form').addEventListener('submit', function(e)   {
 
 // Delete ONE expense
 // (adapted from my todo list app)
-function deleteExpense() {
-    const deleteExpenseBtn = document.createElement("button");
-    deleteExpenseBtn.className = "deleteExpenseBtn";
-    deleteExpenseBtn.appendChild(document.createTextNode("x"));
-    deleteExpenseBtn.addEventListener("click", function(e) {       
-        // deleteSingleTaskFromLocalStorage(task.text);
-        ul.removeChild(li);
-    });
+// function deleteExpense() {
+    
+//     deleteExpenseBtn.addEventListener("click", function(e) {       
+//         // deleteSingleTaskFromLocalStorage(task.text);
+//         ul.removeChild(li);
+//     });
 
-    li.appendChild(deleteExpenseBtn);    
-}
+     
+// }
 
 
 
@@ -114,8 +119,13 @@ function deleteExpense() {
 // STEP 1: Get these inputs displaying in an HTML table.
 // DONE
 
-// STEP 2: Ensure user can add new expenses, as in your todo app.
+// STEP 2: Ensure user can add new expenses.
 // DONE
 
 // STEP 3: Ensure user can delete both individual entries and complete table.
 // in progress...
+
+
+
+
+
