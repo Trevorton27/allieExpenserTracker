@@ -5,51 +5,58 @@ const expense = document.getElementById('expense');
 const currency = document.getElementById('currency');
 const amount = document.getElementById('amount');
 const expenseTable = document.getElementById('table-body');
+let rowCount = 0;
 
 
-function displayExpense(expense)   {
+function renderExpense(expense)   {
     const table = document.getElementById('table-body');
     const tableRow = document.createElement('tr');
+    const id = 'row' + rowCount; 
+// create row
 // display date
+    tableRow.setAttribute('id', id);
     const dateTableData = document.createElement('td');
     dateTableData.textContent = expense.date;
     tableRow.append(dateTableData);
-    table.append(tableRow);
+    rowCount++;
+    
 // display category
     const categoryTableData = document.createElement('td');
     categoryTableData.textContent = expense.category;
     tableRow.append(categoryTableData);
-    table.append(tableRow);
+    
 // display expense proper
     const expenseTableData = document.createElement('td');
     expenseTableData.textContent = expense.expense;
     tableRow.append(expenseTableData);
-    table.append(tableRow);
+    
 // display currency
     const currencyTableData = document.createElement('td');
     currencyTableData.textContent = expense.currency;
     tableRow.append(currencyTableData);
-    table.append(tableRow);
+    
 // display amount
     const amountTableData = document.createElement('td');
     amountTableData.textContent = expense.amount;
     tableRow.append(amountTableData);
-    table.append(tableRow);
+    
 // display delete button
-    const deleteExpenseBtn = document.createElement("button");
-    deleteExpenseBtn.className = "deleteExpenseBtn";
-    deleteExpenseBtn.appendChild(document.createTextNode("x"));
+    let deleteExpenseBtn = document.createElement('button');
+    deleteExpenseBtn.addEventListener('onclick', (id) => deleteFunction(id));
+    deleteExpenseBtn.className = 'deleteExpenseBtn';
+    deleteExpenseBtn.appendChild(document.createTextNode('x'));
     amountTableData.appendChild(deleteExpenseBtn);
-// why do we have to add below 2? what do they do exactly?
+    // de qué se tratan éstos?
     tableRow.append(amountTableData);
     table.append(tableRow);   
 
-    // GET <tbody>
-    // CREATE <tr> & <td>    
-    // ADD INFO to <td>
-    // APPEND <td> to <tr>
-    // APPEND <tr> to <tbody>
+}
 
+
+// call this when delete button is clicked:
+function deleteFunction(id) {
+    let tableRow = document.getElementById(id);
+    tableRow.remove();
 }
 
 
@@ -71,25 +78,9 @@ document.querySelector('form').addEventListener('submit', function(e)   {
         amount: amount.value
     }
 
-    displayExpense(usersExpense);
+    renderExpense(usersExpense);
 
 })
-
-// Delete ONE expense
-// (adapted from my todo list app)
-// function deleteExpense() {
-    
-//     deleteExpenseBtn.addEventListener("click", function(e) {       
-//         // deleteSingleTaskFromLocalStorage(task.text);
-//         ul.removeChild(li);
-//     });
-
-     
-// }
-
-
-
-
 
 
 
