@@ -42,7 +42,7 @@ function renderExpense(expense)   {
     
 // display delete button
     let deleteExpenseBtn = document.createElement('button');
-    deleteExpenseBtn.addEventListener('onclick', (id) => deleteFunction(id));
+    deleteExpenseBtn.addEventListener('click', () => deleteFunction(id));
     deleteExpenseBtn.className = 'deleteExpenseBtn';
     deleteExpenseBtn.appendChild(document.createTextNode('x'));
     amountTableData.appendChild(deleteExpenseBtn);
