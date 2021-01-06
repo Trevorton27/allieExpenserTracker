@@ -1,49 +1,46 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5;
-    background: darkgrey;
-    color: #DE207F;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  background: darkgrey;
+  color: #de207f;
 }
 
 a {
-    text-decoration: none;
-    color: #333
+  text-decoration: none;
+  color: #333;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 #grid-container {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 10fr 1fr;
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  height: 100vh;
 }
 
-
-  
 /* Navbar */
 #navbar-container {
-    border: 1px solid #333;
-    grid-column: 1/3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-    background: #333;
-    color: #fff;
+  border: 1px solid #333;
+  grid-column: 1/3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background: #333;
+  color: #fff;
 }
-  
+
 /* Rounded sliders
 .slider {
     border-radius: 34px;
@@ -54,151 +51,179 @@ ul {
 } */
 
 nav .logo {
-    font-weight: 300;
+  font-weight: 300;
 }
-  
+
 nav .nav-list {
-    display: flex;
-    list-style: none;
-    justify-content: flex-end;
-    
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
 }
-  
+
 nav ul > li {
-    cursor: pointer;
+  cursor: pointer;
 }
-  
+
 nav ul li > a {
-    padding: 10px 0;
-    margin: 0 30px;
-    color: #fff;
-    
+  padding: 10px 0;
+  margin: 0 30px;
+  color: #fff;
 }
-  
+
 nav a:hover {
-    border-bottom: 2px solid #28a745;
+  border-bottom: 2px solid #28a745;
 }
-  
-
-
 
 /* Input Container */
-#expense-form {
-    border-right: 1px solid #333;
-    background-color: darkgrey;
-    padding: 10px;
+.input-container {
+  margin-top: 100px;
 }
-  
-#expense-form input[type=text], input[type=date], input[type=number], select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+#expense-form {
+  border-right: 1px solid #333;
+  background-color: darkgrey;
+  padding: 10px;
+}
+
+.form {
+  padding-left: 20px;
+  padding-top: 40px;
+  text-align: center;
+}
+
+#expense-form input[type='text'],
+input[type='date'],
+input[type='number'],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 /* 
 #expense-form .date {
     color: grey;
 } */
-  
+
 #expense-form .btn {
-    width: 100%;
-    color: darkgrey;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-  
-.submit-btn {
-    background-color: #4CAF50;
-    margin: 8px 0;
+  width: 100%;
+  color: darkgrey;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.delete-all {
-    background-color: #333;
-    text-align: center;
-    margin-top: 30px;
+.submit-btn {
+  background-color: #4caf50;
+  margin: 8px 0;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  border-radius: 8px;
 }
 
 #expense-form .submit-btn:hover {
-    background-color: #28a745;
+  background-color: #28a745;
 }
 
 #expense-form .delete-all:hover {
-    background-color: red;
+  background-color: red;
 }
 
-
-
-
 table {
-    border-collapse: collapse;
-    width: 100%;
+  margin-top: 90px;
+  margin-left: 80px;
+  border-collapse: collapse;
+  width: 80%;
 }
 
 th {
-    border-bottom: 1px solid #f8f8f8;
-    font-size: 18px;
+  border-bottom: 1px solid #f8f8f8;
+  font-size: 22px;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
 tr:nth-child(even) {
-    background: grey;
+  background: grey;
 }
-  
+
 td {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 19px;
 }
-  
+
 tr:hover {
-    background-color: darkgray;
+  background-color: darkgray;
 }
-
-
-
 
 #delete-expense {
-    cursor: pointer;
+  cursor: pointer;
 }
-  
+
 .done-checkbox {
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
-  
+
 .red-trash {
-    color: red;
-    font-size: 22px;
+  color: red;
+  font-size: 22px;
 }
-  
+
 .strike {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
-  
+
 /* Footer */
 #footer {
-    border-top: 2px solid #000;
-    grid-column: 1/3;
-    display: flex;
-    align-items: center;
-}
-  
-#footer p {
-    margin: 0 auto;
+  border-top: 2px solid #000;
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
 }
 
-.red-trash  {
-    color: red;
-    font-size: 22px;
+#footer p {
+  margin: 0 auto;
+}
+
+.red-trash {
+  color: red;
+  font-size: 22px;
 }
 
 .strike {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-#deleteExpenseBtn   {
-    
+.deleteExpenseBtn {
+  padding: 6px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  margin-left: -20px;
+  cursor: pointer;
+}
+
+label {
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  text-align: center;
 }
