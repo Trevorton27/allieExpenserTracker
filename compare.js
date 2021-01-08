@@ -7,29 +7,8 @@ const expenseTable = document.getElementById('table-body');
 let rowCount = 0;
 
 const table = document.getElementById('table-body');
-
-// submit an expense
-const form = document.querySelector('form');
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const date = document.getElementById('date');
-  const category = document.getElementById('category');
-  const expense = document.getElementById('expense');
-  const currency = document.getElementById('currency');
-  const amount = document.getElementById('amount');
-
-  const usersExpense = {
-    date: date.value,
-    category: category.value,
-    expense: expense.value,
-    currency: currency.value,
-    amount: amount.value
-  };
-
-  renderExpense(usersExpense);
-  form.reset();
-});
+const deleteAllBtn = document.getElementById('delete-all');
+deleteAllBtn.addEventListener('click', deleteAllRows);
 
 function renderExpense(expense) {
   const tableRow = document.createElement('tr');
@@ -63,20 +42,16 @@ function renderExpense(expense) {
   tableRow.append(amountTableData);
 
   // display delete button
-  const deleteBtnCell = document.createElement('td');
-  tableRow.append(deleteBtnCell);
   let deleteExpenseBtn = document.createElement('button');
   deleteExpenseBtn.addEventListener('click', () => deleteFunction(id));
   deleteExpenseBtn.className = 'deleteExpenseBtn';
   deleteExpenseBtn.appendChild(document.createTextNode('x'));
-  deleteBtnCell.appendChild(deleteExpenseBtn);
+  amountTableData.appendChild(deleteExpenseBtn);
   // de qué se tratan éstos?
-
+  tableRow.append(amountTableData);
   table.append(tableRow);
 }
 
-const deleteAllBtn = document.getElementById('delete-all');
-deleteAllBtn.addEventListener('click', deleteAllRows);
 // call this when delete button is clicked:
 function deleteFunction(id) {
   let tableRow = document.getElementById(id);
@@ -85,5 +60,25 @@ function deleteFunction(id) {
 
 function deleteAllRows() {
   table.remove();
-  document.location.reload();
+  window.location.reload();
 }
+// submit an expense
+document.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const date = document.getElementById('date');
+  const category = document.getElementById('category');
+  const expense = document.getElementById('expense');
+  const currency = document.getElementById('currency');
+  const amount = document.getElementById('amount');
+
+  const usersExpense = {
+    date: date.value,
+    category: category.value,
+    expense: expense.value,
+    currency: currency.value,
+    amount: amount.value
+  };
+
+  renderExpense(usersExpense);
+});
