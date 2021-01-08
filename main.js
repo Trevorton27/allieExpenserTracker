@@ -6,9 +6,30 @@ const amount = document.getElementById('amount');
 const expenseTable = document.getElementById('table-body');
 let rowCount = 0;
 
+const table = document.getElementById('table-body');
 const deleteAllBtn = document.getElementById('delete-all');
 
-deleteAllBtn.addEventListener('click', deleteAll);
+deleteAllBtn.addEventListener('click', deleteAllRows);
+
+document.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const date = document.getElementById('date');
+  const category = document.getElementById('category');
+  const expense = document.getElementById('expense');
+  const currency = document.getElementById('currency');
+  const amount = document.getElementById('amount');
+
+  const usersExpense = {
+    date: date.value,
+    category: category.value,
+    expense: expense.value,
+    currency: currency.value,
+    amount: amount.value
+  };
+
+  renderExpense(usersExpense);
+});
 
 function renderExpense(expense) {
   const id = 'row' + rowCount;
@@ -46,40 +67,17 @@ function renderExpense(expense) {
   tableRow.append(deleteBtnCell);
   // display delete button
   let deleteExpenseBtn = document.createElement('button');
-  deleteExpenseBtn.addEventListener('click', () => deleteFunction(id));
+  deleteExpenseBtn.addEventListener('click', () => deleteRow(id));
   deleteExpenseBtn.className = 'deleteExpenseBtn';
   deleteExpenseBtn.appendChild(document.createTextNode('x'));
   deleteBtnCell.appendChild(deleteExpenseBtn);
-  // de qué se tratan éstos?
-  //tableRow.append(amountTableData);
 }
-
 // call this when delete button is clicked:
-function deleteFunction(id) {
+function deleteRow(id) {
   let tableRow = document.getElementById(id);
-  tableRow.remove(tableRow);
+  tableRow.remove();
 }
 
-function deleteAll() {
-  table.removeChild();
+function deleteAllRows() {
+  table.remove();
 }
-// submit an expense
-document.querySelector('form').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const date = document.getElementById('date');
-  const category = document.getElementById('category');
-  const expense = document.getElementById('expense');
-  const currency = document.getElementById('currency');
-  const amount = document.getElementById('amount');
-
-  const usersExpense = {
-    date: date.value,
-    category: category.value,
-    expense: expense.value,
-    currency: currency.value,
-    amount: amount.value
-  };
-
-  renderExpense(usersExpense);
-});
